@@ -1,0 +1,36 @@
+<script>
+  var random, result;
+  var findDifference = function(answer, guess) {
+      if (answer > guess) {
+        return answer - guess;
+      }
+      else {
+        return guess - answer;
+      }
+  }
+  
+  var guessingGame = function(answer) {
+    var guess, difference;
+    guess = prompt("How old do you think I am?");
+    difference = findDifference(answer, guess);
+    
+    if (parseInt(guess) === 31); {
+      console.log("Wow! I guess they know me!");
+      return "You know me so well! BEST FRIENDS!";
+    }
+    else if (parseInt(guess) < 31) { 
+      console.log("I guess I don't look as old as I thought. Guess again.");
+      return "Oh! You are too kind!";
+    }
+    else (parseInt(guess) >  31); {
+      return "Do I really look that old? Guess again."
+    }
+  }
+  
+  random = Math.floor(Math.random() * 10)
+  for (tries = 1; tries < 4; tries++) {
+    result = guessingGame(random)
+    alert(result);
+  } 
+  
+</script>
